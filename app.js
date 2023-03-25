@@ -1,9 +1,6 @@
 const express = require("express");
-const bodyParser = require("body-parser");
-var todoController = require("./controllers/todoController");
 
-// bodyParser
-var urlencodedparser = bodyParser.urlencoded({ extended: false });
+var todoController = require("./controllers/todoController");
 
 // init express
 const app = express();
