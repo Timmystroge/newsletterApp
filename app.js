@@ -1,15 +1,13 @@
 const express = require("express");
-const appController = require("controller/appController");
-// const bodyParser = require("body-parser");
-
-// set up body parser
-// const urlencodedparser = bodyParser.urlencoded({ extended: false });
+const appController = require("./controller/appController");
 
 // set app
 const app = express();
-// app.use(express.bodyParser({ extended: true }));
+
+// set express statice route
 app.use(express.static("public"));
 
+// fire App controller
 appController(app);
 
 //listen to server
