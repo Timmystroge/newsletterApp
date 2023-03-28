@@ -1,22 +1,19 @@
 const express = require("express");
+// const bodyParser = require("body-parser");
 
-var todoController = require("./controllers/todoController");
+// set up body parser
+// const urlencodedparser = bodyParser.urlencoded({ extended: false });
 
-// init express
+// set app
 const app = express();
+// app.use(express.bodyParser({ extended: true }));
+app.use(express.static("public"));
 
-// set view engine
-app.set("view engine", "ejs");
 
-/* static files MIDDLE-WARE*/
-app.use(express.static("./public"));
 
-//? CODE MORE
 
-// fire controller
-todoController(app);
 
-/* start and listen to server */
+//listen to server
 app.listen(3000, function () {
-  console.log("Todo-node Server started on Port 3000!");
+  console.log("Server is running on port 3000!");
 });
