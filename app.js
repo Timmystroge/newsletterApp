@@ -1,16 +1,28 @@
 const express = require("express");
-const appController = require("./controller/appController");
+const bodyParser = require("body-parser");
 
 // set app
 const app = express();
 
+// fire bodyParser
+const urlencodedparser = bodyParser.urlencoded({ extended: false });
 // set express statice route
 app.use(express.static("public"));
 
-// fire App controller
-appController(app);
+// set up index page
+app.get("/", function (req, res) {
+  res.sendFile(__dirname + "/signup.html");
+});
+
+// handle post request
+app.post("/", urlencodedparser, function (req, res) {
+  console.log(req.body);
+});
 
 //listen to server
 app.listen(3000, function () {
   console.log("Server is running on port 3000!");
 });
+
+// apikey 
+// e7248c74f9a85b5f459f0152610c53b7-us11
