@@ -17,6 +17,7 @@ app.get("/", function (req, res) {
 // handle post request
 app.post("/", urlencodedparser, function (req, res) {
   console.log(req.body);
+  res.sendFile(`${__dirname}/success.html`);
 });
 
 //listen to server
@@ -24,5 +25,5 @@ app.listen(3000, function () {
   console.log("Server is running on port 3000!");
 });
 
-// apikey 
+// apikey
 // e7248c74f9a85b5f459f0152610c53b7-us11
